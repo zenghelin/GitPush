@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>landing</title>
+    <style>
+        body{
+            background-image: url("../images/land.jpg");
+            background-size: cover;
+        }
+        #form{
+            width: 500px;
+            height: 300px;
+            border: 1px solid greenyellow;
+            margin: 12% auto;
+            text-align: center;
+            background: rgba(84, 225, 38, 0.3);
+        }
+        .input{
+            width: 60%;
+            height: 10%;
+            font-size: 20px;
+            border-radius: 5%;
+
+        }
+        #input1{
+            margin-top: 20%;
+            margin-bottom: 3%;
+        }
+        #input2{
+            margin-bottom: 5%;
+        }
+    </style>
+</head>
+<body>
+<form id="form">
+    账号：<input type="text" id="input1" class="input"><br>
+    密码：<input  type="password" id="input2" class="input"><br>
+    <input type="button" id="zhuce" onclick="window.location.href='../Register/index.html'" class="btn" value="注册">
+    <input type="button" onclick="window.location.href='../index.html'" id="denglu"  class="btn" value="登陆"><br>
+    <a href="#" onclick="alert('这都能忘，怎么不把自己忘了！')"><p style="float: right; color: darkgreen">忘记密码？</p></a>
+</form>
+</body>
+</html>

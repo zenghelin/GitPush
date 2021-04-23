@@ -1,0 +1,338 @@
+@charset "UTF-8";
+
+body{
+    margin: 0 0;
+    padding: 0 0;
+    background:linear-gradient(#528b26,white);
+    /*解决marign居中方式水品滚动条弊端*/
+    overflow-x: hidden;
+}
+.container1{
+    width: 1366px;
+    height: 150px;
+}
+
+.top{
+    width: 100%;
+    height:70%;
+    background:linear-gradient(#ff1313, #6675fd);
+}
+#signIn{
+    width: 100px;
+    height: 50px;
+   background-color: rgba(221, 28, 49, 0.1);
+    border: 0;
+    color: #d4ffba;
+    font-size: 20px;
+    float: right;
+    margin-right: 10%;
+}
+.nav{
+    margin-top: -20px;
+    width: 100%;
+    height: 30%;
+    background-color: rgba(0,0,0,0.8);
+}
+.nav>ul li{
+    margin-top: -10px;
+    list-style: none;
+    width: 100px;
+    height: 30px;
+
+}
+.nav>ul li>a{
+    text-decoration: none;
+    color: white;
+}
+.nav>ul li:hover{
+    transition: 0.7s;
+    transform: translate(8px);
+}
+.nav>ul li>a:active{
+
+    color: yellow;
+}
+.li0{
+    text-align:center ;
+    background-color: firebrick;
+    font-size: 20px;
+    float: left;
+    margin-left: 9.5%;
+    box-shadow: 4px 5px 8px gray;
+    border-radius: 3px;
+}
+.container2{
+    width:1330px ;
+    /*使用该方式居中出现水平滚动条，解决方案，设置水品滚动条隐藏即可；还可以用js来设计居中*/
+    margin: 0px auto;
+    /*border:1px solid greenyellow;*/
+}
+.image{
+    width: 800px;
+    height: 492px;
+    /*border: 1px solid darkred;*/
+    /*使用该方式居中出现水平滚动条，解决方案，设置水品滚动条隐藏即可；还可以用js来设计居中*/
+    margin: 40px auto;
+}
+#lunbo:hover{
+    transition: 1s;
+    transform: rotateY(360grad);
+
+}
+.btc{
+    font-size: 50px;
+    color: green;
+    width: 100px;
+    height: 50px;
+    background:rgba(225,225,225,0);
+    border: 0px;
+}
+.btc:hover{
+   color: firebrick;
+}
+#bright{
+    position: absolute;
+    left: 80%;
+    bottom: 40%;
+}
+#bleft{
+    position: absolute;
+    left:12.5% ;
+    bottom: 40%;
+}
+.matchnews{
+    width: 100%;
+    height: 800px;
+    /*border: 1px solid darkred;*/
+    margin: 0px auto;
+
+}
+
+.ctalking{
+    width: 90%;
+    height: 600px;
+    margin:30px auto;
+    /*border: 1px solid firebrick;*/
+}
+.talk{
+    width: 50%;
+    height: 60%;
+    /*border: 1px solid saddlebrown;*/
+    float: left;
+}
+.talk>ul li{
+    list-style-image:url("../images/firelogo.png") ;
+}
+.talk>ul li:hover{
+    background-color: #8af45e;
+}
+.talk>ul li>a:link{
+    text-decoration: none;
+}
+.talk>ul li>a:hover{
+    color: red;
+    transition: 0.7s;
+    /*background-color: greenyellow;*/
+}
+#advising {
+    width: 40%;
+    height: 80%;
+    float: right;
+    /*border: 1px solid saddlebrown;*/
+}
+#advising{
+    text-align: center;
+}
+#adv:hover{
+    transition: 2s;
+    transform: rotateY(180grad);
+}
+
+/*CSS名片介绍图部分*/
+
+.demo{padding: 0em 0;}
+.our-team{
+    padding: 30px 0 40px;
+    background:linear-gradient(#7878f7, #8af45e, #ff3e41) ;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.our-team:hover{
+    transition: 0.7s;
+    transform: translateY(-10px);
+    box-shadow: 6px 10px 3px 0px dimgrey;
+}
+.our-team .pic{
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    margin-bottom: 50px;
+    z-index: 1;
+    position: relative;
+}
+.our-team .pic:before{
+    content: "";
+    width: 100%;
+    height: 0;
+    border-radius: 50%;
+    background: #878eeb;
+    position: absolute;
+    bottom: 135%;
+    right: 0;
+    left: 0;
+    opacity: 0.5;
+    /*将背景覆盖到上面去*/
+    transform: scale(9);
+    transition: all 0.3s linear 0s;
+}
+.our-team:hover .pic:before{ height: 100%; }
+
+/*设置头像边框的颜色和形状*/
+/*.our-team .pic:after{*/
+/*    content: "";*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    border-radius: 50%;*/
+/*    background: #ee4266;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    z-index: -1;*/
+/*}*/
+.our-team .pic img{
+    width: 100%;
+    height: auto;
+    /*border-radius: 50%;*/
+    transform: scale(1);
+    transition: all 0.9s ease 0s;
+}
+/*当鼠标移到.our-team时.pic 下的img状态*/
+.our-team:hover .pic img{
+    /*box-shadow: 0 0 0 14px #f7f5ec;*/
+    /*改变其内容的增大或缩小小于一缩小，反之增大*/
+    transition: 1s;
+    transform: scale(1.2);
+}
+.our-team .team-content{ margin-bottom: 30px; }
+.our-team .title{
+    font-size: 22px;
+    font-weight: 700;
+    color: #4e5052;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+}
+.our-team .post{
+    display: block;
+    font-size: 15px;
+    color: #4e5052;
+    text-transform:capitalize;
+}
+.our-team .social{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #878eeb;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    transition: all 0.5s ease 0s;
+}
+.our-team:hover .social{ bottom: 0; }
+.our-team .social li{ display: inline-block; }
+.our-team .social li a{
+    display: block;
+    padding: 10px;
+    font-size: 17px;
+    color: #fff;
+    transition: all 0.3s ease 0s;
+}
+.our-team .social li a:hover{
+    color: #8b86eb;
+    background: #f7f5ec;
+}
+@media only screen and (max-width: 990px){
+    .our-team{ margin-bottom: 30px; }
+}
+
+
+
+
+
+
+
+/*辅助上面的css效果*/
+body, html { font-size: 100%; 	padding: 0; margin: 0;}
+
+/* Reset */
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+body{
+    font-weight: 500;
+    font-size: 1.05em;
+    font-family: "Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif;
+}
+
+
+
+
+
+
+
+.container3{
+    text-align: center;
+    width: 1366px;
+    height: 300px;
+    background: linear-gradient(white, #38488b);
+    border: 1px solid darkred;
+    font-family: "Fira Code Light";
+    font-size: 15px;
+}
+.container3 li{
+    list-style: none;
+}
+.container3 li:nth-child(1){
+    margin-top: 120px;
+}
+.container3 li a{
+    color: #2722a6;
+}
+
+
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+    width:5px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    background:linear-gradient(red,green,blue);
+    border-radius:10px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius:10px;
+    background: rgba(223, 225, 220, 0.99);
+    -webkit-box-shadow:rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background:rgba(255,0,0,0.4);
+}

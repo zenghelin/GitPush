@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>赛事观看</title>
+    <link type="text/css" rel="stylesheet" href="../Style/matchwatching.css">
+    <!--封装好的视频布局样式-->
+    <link rel="stylesheet" href="css/jsmodern.min.css">
+    <script src="js/jquery.min.js"></script>
+    <!--mp4视频插件-->
+    <script src="js/jsmodern.min.js"></script>
+</head>
+<body>
+    <div class="container1">
+
+        <div class="top">
+
+        </div>
+        <div class="nav">
+            <ul class="ul1">
+                <li class="li0"><a href="../index.html">首页</a></li>
+                <li class="li0"><a href="../Community/index.html">社区</a></li>
+                <li class="li0"><a href="">趣味小游戏</a></li>
+                <li class="li0"><a href="">个人中心</a></li>
+                <li class="li0"><a href="">导航</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--视频插件调用方法-->
+    <script>
+        $(function () {
+            //视频
+            jsModern.video("#video");
+            //播放视频
+            $(".VideoBtn").click(function () {
+                var video = document.getElementById("videoShow");
+                video.play();
+                $('.VideoBtn').hide();
+            })
+            //监听视频的播放状态
+            var video = document.getElementById("videoShow");
+            video.oncanplay = function () {
+                $(".VideoBtn").show();
+                //$("#video").attr("poster","");
+            }
+            //视频播放事件
+            video.onplay = function () {
+                $("#videoShow").attr("poster", "");
+                $(".VideoBtn").hide();
+            };
+            video.onplaying = function () {
+                $(".VideoBtn").hide();
+            };
+
+            //视频暂停事件
+            video.onpause = function () {
+                $(".VideoBtn").show();
+            };
+            //点击视频周围暂停播放图片出现
+            video.onclick = function () {
+                if (video.paused) {
+                    $(".VideoBtn").hide();
+                    video.play();
+                } else {
+                    $(".VideoBtn").show();
+                    video.pause();
+                }
+            };
+        })
+    </script>
+    <div class="container2">
+        <div class="container21">
+            <div class="leftdiv">
+                <div id="video">
+                    <video src="https://blz-videos.nosdn.127.net/1/OverWatch/AnimatedShots/Overwatch_AnimatedShot_Soldier76_Hero.mp4" id="videoShow"></video>
+                    <span class="VideoBtn"><img src="images/bo1.png"></span>
+                </div>
+            </div>
+            <div class="rightdiv">
+                <ul>
+                    <li class="li1">
+                        <h3 class="matchkind"><a href="#">乒乓球</a></h3>
+                        <div class="mactchplayed">
+                            <ul>
+                                <li>小组赛</li>
+                                <li>淘汰赛</li>
+                                <li>半决赛</li>
+                                <li>决赛</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="li1">
+                        <h3 class="matchkind"><a href="#">羽毛球</a></h3>
+                        <div class="mactchplayed">
+                            <ul>
+                                <li>小组赛</li>
+                                <li>淘汰赛</li>
+                                <li>半决赛</li>
+                                <li>决赛</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="li1">
+                        <h3 class="matchkind"><a href="#">体操</a></h3>
+                        <div class="mactchplayed">
+                            <ul>
+                                <li>小组赛</li>
+                                <li>淘汰赛</li>
+                                <li>半决赛</li>
+                                <li>决赛</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="li1">
+                        <h3 class="matchkind"><a href="#">篮球</a></h3>
+                        <div class="mactchplayed">
+                            <ul>
+                                <li>小组赛</li>
+                                <li>淘汰赛</li>
+                                <li>半决赛</li>
+                                <li>决赛</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="li1">
+                        <h3 class="matchkind"><a href="#">跳高</a></h3>
+                        <div class="mactchplayed">
+                            <ul>
+                                <li>小组赛</li>
+                                <li>淘汰赛</li>
+                                <li>半决赛</li>
+                                <li>决赛</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="li1">
+                        <h3 class="matchkind"><a href="#">田径100米</a></h3>
+                        <div class="mactchplayed">
+                            <ul>
+                                <li>小组赛</li>
+                                <li>淘汰赛</li>
+                                <li>半决赛</li>
+                                <li>决赛</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container3">
+        <span>点赞数：999+</span>
+        <span>收藏数：999+</span>
+        <span>评论数：999+</span>
+    </div>
+    <div class="container4">
+    </div>
+    <div class="container5">
+    </div>
+</body>
+</html>

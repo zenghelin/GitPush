@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>registering</title>
+    <style>
+        body{
+            background-image: url("../images/registerback.jpg");
+            background-size: cover;
+        }
+        form{
+            width: 400px;
+            height: 600px;
+            border: 1px solid firebrick;
+            margin:2% auto;
+            text-align: center;
+            background-image: url("../images/registerfront.jpg");
+        }
+        input{
+            width: 80%;
+            height: 5%;
+            margin-bottom: 5%;
+            background: rgba(124, 221, 30, 0.3);
+        }
+        input:nth-child(1){
+            margin-top: 20%;
+
+        }
+        .born{
+            width: 40px;
+            height: 20px;
+            margin-bottom: 4%;
+            background-color: rgba(88, 47, 225, 0.3);
+        }
+        .address{
+            width: 50px;
+            height: 20px;
+            margin-bottom: 4%;
+            background-color: rgba(88, 47, 225, 0.3);
+        }
+        #zhuce{
+            background-color: rgba(86, 108, 225, 0.6);
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form1">
+        <input  type="text" placeholder="昵称" class="required"><br>
+       出生日期:<input class="born" id="year" placeholder="年"><input class="born" id="month" placeholder="月"> <input class="born" id="day" placeholder="日"><br>
+        籍贯：<input class="address" placeholder="省"><input class="address" placeholder="市"><br>
+        <input  class="required" type="text" placeholder="账号">
+        <input  class="required" id="pwd" type="password" placeholder="密码">
+        <input  class="required" id="rpwd" type="password" placeholder="确认密码"><br>
+        <input type="button" id="zhuce" value="注册">
+    </form>
+</body>
+</html>
+<script src="../JavaScript/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+   /*点击注册按键时触发的事件*/
+    $('#zhuce').click(function () {
+        isFilled();
+    })
+   /*检查表单元素是否填写完整*/
+   function isFilled() {
+       var inputs= $('input');
+       for (var i=0;i<inputs.length;i++) {
+           if (inputs[i].value == "") {
+               $(alert("请将表单元素填写完整！"));
+               return false;
+           }
+       }
+       /*将所有数据分类型存入数据库*/
+       //ToDo
+
+       window.location.href="../Land/index.html";
+       return true;
+   }
+    /*当rpwd框失去焦距时出发事件*/
+   $('#rpwd').blur (function(){
+       isPwdSame() ;
+   })
+   /*检查两次密码输入是否一致*/
+    function isPwdSame() {
+        var pwd= $('#pwd').val();
+        var rpwd=$('#rpwd').val();
+        if(pwd=='' ||rpwd==''||pwd==''&&rpwd==''){
+            alert("密码不能为空")
+        } else if(pwd!=rpwd)
+        {
+            alert('前后密码不一致')
+        }
+    }
+
+
+    $('#year').blur(function () {
+        isRightYear()
+    })
+   $('#month').blur(function () {
+       isRightMonth()
+   })
+   $('#day').blur(function () {
+       isRightDay()
+   })
+    function isRightYear() {
+        var y=$('#year').val();
+        if (y>'2019'||y<'0')
+            alert('输入年份有误');
+    }
+   function isRightMonth() {
+       var y=$('#month').val();
+       if (y>'12'||y<'0')
+           alert('输入月份有误');
+   }
+   function isRightDay() {
+       var y=$('#day').val();
+       if (y>'31'||y<'0')
+           alert('输入天数有误');
+   }
+
+</script>
